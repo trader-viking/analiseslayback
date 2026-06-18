@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+
 <html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Analisador Operacional v6.8 - Legendas Explicativas</title>
+<title>Analisador Operacional v7.0 - Painel Preto + Odd Boost</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -195,12 +195,25 @@
 .export-opt label{font-size:11px;font-weight:600;color:var(--text2);cursor:pointer;text-transform:none;letter-spacing:0;}
 .export-opt.active{border-color:var(--orange);background:rgba(245,158,11,.08);}
 .export-opt.active label{color:var(--orange);font-weight:700;}
+.export-opt.beginner:hover{border-color:var(--cyan);}
+.export-opt.beginner input{accent-color:var(--cyan);}
+.export-opt.beginner.active{border-color:var(--cyan);background:rgba(6,182,212,.08);}
+.export-opt.beginner.active label{color:var(--cyan);font-weight:700;}
 .mc-hv{box-shadow:0 0 0 2px rgba(132,204,22,.15),inset 0 0 30px rgba(132,204,22,.03);position:relative;}
 .mc-hv::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--lime),var(--gold));background-size:200% 100%;animation:shineGold 3s linear infinite;border-radius:12px 12px 0 0;}
 @keyframes shineGold{0%{background-position:0% 0%}100%{background-position:200% 0%}}
 .hv-badge{display:flex;align-items:center;justify-content:center;gap:5px;padding:5px 10px;margin:6px 0 8px;background:linear-gradient(135deg,rgba(251,191,36,.18),rgba(132,204,22,.15));border:1px solid rgba(251,191,36,.4);border-radius:8px;font-size:9px;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:.8px;text-align:center;}
 .hv-star{font-size:11px;animation:starPulse 1.5s ease-in-out infinite;}
 @keyframes starPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+
+/* ═══ NOVO v7.0: ODD BOOST BADGE ═══ */
+.odd-boost-badge{display:flex;align-items:center;justify-content:center;gap:5px;padding:5px 10px;margin:4px 0 8px;border-radius:8px;font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;text-align:center;border:1px solid;font-family:'Inter',sans-serif;}
+.odd-boost-badge.b-strong{background:linear-gradient(135deg,rgba(132,204,22,.18),rgba(16,185,129,.18));color:var(--lime);border-color:rgba(132,204,22,.5);box-shadow:0 0 12px rgba(132,204,22,.2);}
+.odd-boost-badge.b-pos{background:rgba(16,185,129,.13);color:var(--green);border-color:rgba(16,185,129,.4);}
+.odd-boost-badge.b-neutral{background:rgba(6,182,212,.10);color:var(--cyan);border-color:rgba(6,182,212,.3);}
+.odd-boost-badge.b-neg{background:rgba(239,68,68,.12);color:var(--red);border-color:rgba(239,68,68,.4);box-shadow:0 0 10px rgba(239,68,68,.18);}
+.odd-boost-badge .ob-icon{font-size:13px;font-weight:900;}
+
 .odd-range{margin:6px 0;padding:6px 8px;background:rgba(15,23,42,.5);border:1px solid var(--border);border-radius:6px;}
 .odd-range.hv{background:linear-gradient(135deg,rgba(251,191,36,.06),rgba(132,204,22,.06));border-color:rgba(132,204,22,.3);}
 .odd-range-row{display:flex;justify-content:space-between;align-items:center;gap:4px;}
@@ -210,16 +223,23 @@
 .odd-range-row .orv.id{background:rgba(16,185,129,.15);color:var(--green);}
 .odd-range-row .orv.mx{background:rgba(6,182,212,.15);color:var(--cyan);}
 .odd-range.hv .orv.mx{background:linear-gradient(135deg,var(--gold),var(--lime));color:#0f172a;font-weight:900;}
-
-/* ═══ NOVO v6.8: LEGENDA EXPLICATIVA dos métodos High Value ═══ */
 .entry-legend{margin:8px 0 10px;padding:10px;background:linear-gradient(135deg,rgba(251,191,36,.06),rgba(132,204,22,.05),rgba(6,182,212,.04));border:1px solid rgba(132,204,22,.25);border-radius:10px;}
+.entry-legend.beginner-only{background:linear-gradient(135deg,rgba(6,182,212,.05),rgba(59,130,246,.04));border-color:rgba(6,182,212,.3);}
+.entry-legend.beginner-only .entry-legend-market{color:var(--cyan);background:rgba(6,182,212,.08);border-color:rgba(6,182,212,.35);}
+.entry-legend.beginner-only .entry-legend-item.ideal .elg-lbl{color:var(--cyan);}
+.entry-legend.beginner-only .entry-legend-item.ideal{background:linear-gradient(135deg,rgba(6,182,212,.10),rgba(59,130,246,.06));border-left-color:var(--cyan);}
 .entry-legend-title{font-size:12px;font-weight:900;color:var(--text);text-align:center;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;}
 .entry-legend-market{font-size:10px;font-weight:700;color:var(--gold);text-align:center;padding:6px 8px;margin-bottom:8px;background:rgba(251,191,36,.08);border:1px dashed rgba(251,191,36,.35);border-radius:6px;}
+.score-grid{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;padding:6px;background:rgba(15,23,42,.4);border-radius:6px;}
+.score-cell{padding:3px 8px;border-radius:5px;font-family:'JetBrains Mono',monospace;font-weight:800;font-size:10px;letter-spacing:.3px;display:inline-flex;align-items:center;gap:3px;}
+.score-cell.win{background:rgba(16,185,129,.18);color:var(--green);border:1px solid rgba(16,185,129,.4);}
+.score-cell.win::before{content:'✓';font-size:9px;}
+.score-cell.lose{background:rgba(239,68,68,.15);color:var(--red);border:1px solid rgba(239,68,68,.3);text-decoration:line-through;text-decoration-color:rgba(239,68,68,.6);}
+.score-cell.lose::before{content:'✗';font-size:9px;text-decoration:none;display:inline-block;}
 .entry-legend-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
 .entry-legend-item{display:flex;flex-direction:column;gap:3px;padding:5px 7px;border-radius:6px;font-size:9px;line-height:1.35;}
 .entry-legend-item.win{background:rgba(16,185,129,.08);border-left:3px solid var(--green);}
 .entry-legend-item.lose{background:rgba(239,68,68,.07);border-left:3px solid var(--red);}
-.entry-legend-item.example{background:rgba(59,130,246,.07);border-left:3px solid var(--accent);grid-column:span 2;}
 .entry-legend-item.ideal{background:linear-gradient(135deg,rgba(251,191,36,.10),rgba(132,204,22,.06));border-left:3px solid var(--gold);grid-column:span 2;}
 .entry-legend-item .elg-lbl{font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:2px;}
 .entry-legend-item.win .elg-lbl{color:var(--green);}
@@ -227,68 +247,77 @@
 .entry-legend-item.example .elg-lbl{color:var(--accent);}
 .entry-legend-item.ideal .elg-lbl{color:var(--gold);}
 .entry-legend-item .elg-val{color:var(--text);font-weight:600;font-size:9.5px;}
-@media(max-width:560px){.entry-legend-grid{grid-template-columns:1fr;}.entry-legend-item.example,.entry-legend-item.ideal{grid-column:auto;}}
+@media(max-width:560px){.entry-legend-grid{grid-template-columns:1fr;}.entry-legend-item.ideal{grid-column:auto;}}
 
-.odds-panel{background:linear-gradient(135deg,rgba(6,182,212,.06),rgba(59,130,246,.06));border:1px solid rgba(6,182,212,.25);border-radius:14px;padding:16px;margin-bottom:14px;}
+/* ═══ NOVO v7.0: PAINEL DE ODDS PRETO (alto contraste) ═══ */
+.odds-panel{background:#000000;border:1px solid rgba(6,182,212,.35);border-radius:14px;padding:16px;margin-bottom:14px;box-shadow:0 0 18px rgba(6,182,212,.08),inset 0 0 40px rgba(0,0,0,.5);}
 .odds-title{font-size:12px;font-weight:800;color:var(--cyan);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;}
 .odds-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;}
-.odds-input-wrap{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:8px 10px;transition:.3s;position:relative;}
-.odds-input-wrap label{display:block;font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;font-weight:700;margin-bottom:4px;}
-.odds-input-wrap input{width:100%;background:transparent;border:none;color:var(--text);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;outline:none;text-align:center;}
-.odds-input-wrap input:focus{color:var(--cyan);} .odds-input-wrap.has-value{border-color:var(--cyan);}
-.odds-input-wrap.v-ideal{border:2px solid var(--green);box-shadow:0 0 12px rgba(16,185,129,.25);}
+.odds-input-wrap{background:#0a0a0a;border:1px solid #1e2a44;border-radius:10px;padding:8px 10px;transition:.3s;position:relative;}
+.odds-input-wrap label{display:block;font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:.6px;font-weight:700;margin-bottom:4px;}
+.odds-input-wrap input{width:100%;background:transparent;border:none;color:#f1f5f9;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;outline:none;text-align:center;}
+.odds-input-wrap input:focus{color:var(--cyan);} 
+.odds-input-wrap.has-value{border-color:var(--cyan);}
+.odds-input-wrap.v-ideal{border:2px solid var(--green);box-shadow:0 0 12px rgba(16,185,129,.35);}
 .odds-input-wrap.v-ideal::before{content:'✓ IDEAL';position:absolute;top:-7px;right:6px;font-size:7px;font-weight:800;padding:1px 5px;background:var(--green);color:#fff;border-radius:8px;letter-spacing:.5px;}
-.odds-input-wrap.v-ok{border:2px solid var(--cyan);box-shadow:0 0 8px rgba(6,182,212,.2);}
+.odds-input-wrap.v-ok{border:2px solid var(--cyan);box-shadow:0 0 8px rgba(6,182,212,.3);}
 .odds-input-wrap.v-ok::before{content:'OK';position:absolute;top:-7px;right:6px;font-size:7px;font-weight:800;padding:1px 5px;background:var(--cyan);color:#fff;border-radius:8px;letter-spacing:.5px;}
-.odds-input-wrap.v-low{border:2px solid var(--red);box-shadow:0 0 8px rgba(239,68,68,.2);}
+.odds-input-wrap.v-low{border:2px solid var(--red);box-shadow:0 0 8px rgba(239,68,68,.3);}
 .odds-input-wrap.v-low::before{content:'↓ BAIXA';position:absolute;top:-7px;right:6px;font-size:7px;font-weight:800;padding:1px 5px;background:var(--red);color:#fff;border-radius:8px;letter-spacing:.5px;}
-.odds-input-wrap.v-high{border:2px solid var(--orange);box-shadow:0 0 8px rgba(245,158,11,.2);}
+.odds-input-wrap.v-high{border:2px solid var(--orange);box-shadow:0 0 8px rgba(245,158,11,.3);}
 .odds-input-wrap.v-high::before{content:'↑ ALTA';position:absolute;top:-7px;right:6px;font-size:7px;font-weight:800;padding:1px 5px;background:var(--orange);color:#fff;border-radius:8px;letter-spacing:.5px;}
-.odds-input-wrap.v-hv{border:2px solid var(--gold);box-shadow:0 0 14px rgba(251,191,36,.35);}
+.odds-input-wrap.v-hv{border:2px solid var(--gold);box-shadow:0 0 18px rgba(251,191,36,.45);}
 .odds-input-wrap.v-hv::before{content:'⭐ +VALOR';position:absolute;top:-7px;right:6px;font-size:7px;font-weight:800;padding:1px 5px;background:linear-gradient(135deg,var(--gold),var(--lime));color:#0f172a;border-radius:8px;letter-spacing:.5px;}
-.odd-feedback{margin-top:6px;font-size:9px;line-height:1.4;padding:4px 6px;border-radius:5px;display:flex;flex-direction:column;gap:3px;}
-.odd-feedback-msg{display:flex;align-items:center;gap:4px;font-weight:600;}
+.odd-feedback{margin-top:6px;font-size:9px;line-height:1.4;padding:4px 6px;border-radius:5px;display:flex;flex-direction:column;gap:3px;background:rgba(255,255,255,.02);}
+.odd-feedback-msg{display:flex;align-items:center;gap:4px;font-weight:600;color:#cbd5e1;}
 .odd-feedback-method{display:inline-block;padding:1px 5px;border-radius:4px;font-size:8px;font-weight:700;font-family:'JetBrains Mono',monospace;margin-right:3px;}
-.odd-feedback-method.m-ok{background:rgba(16,185,129,.15);color:var(--green);border:1px solid rgba(16,185,129,.3);}
+.odd-feedback-method.m-ok{background:rgba(16,185,129,.18);color:var(--green);border:1px solid rgba(16,185,129,.3);}
 .odd-feedback-method.m-ideal{background:linear-gradient(135deg,var(--green),var(--lime));color:#0f172a;}
 .odd-feedback-method.m-hv{background:linear-gradient(135deg,var(--gold),var(--lime));color:#0f172a;border:1px solid var(--gold);}
-.odd-feedback-method.m-low{background:rgba(239,68,68,.15);color:var(--red);}
-.odd-feedback-method.m-high{background:rgba(245,158,11,.15);color:var(--orange);}
-.odds-btn-apply{padding:8px 18px;background:linear-gradient(135deg,var(--cyan),var(--accent));color:#fff;border:none;border-radius:10px;font-weight:700;font-size:11px;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;}
-.odds-btn-clear{padding:7px 14px;background:transparent;color:var(--text2);border:1px solid var(--border);border-radius:10px;font-weight:600;font-size:10px;cursor:pointer;}
+.odd-feedback-method.m-low{background:rgba(239,68,68,.18);color:var(--red);}
+.odd-feedback-method.m-high{background:rgba(245,158,11,.18);color:var(--orange);}
+.odds-btn-apply{padding:8px 18px;background:linear-gradient(135deg,var(--cyan),var(--accent));color:#fff;border:none;border-radius:10px;font-weight:700;font-size:11px;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;box-shadow:0 4px 12px rgba(6,182,212,.3);}
+.odds-btn-apply:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(6,182,212,.5);}
+.odds-btn-clear{padding:7px 14px;background:rgba(255,255,255,.04);color:#94a3b8;border:1px solid #334155;border-radius:10px;font-weight:600;font-size:10px;cursor:pointer;}
+.odds-btn-clear:hover{background:rgba(255,255,255,.07);color:#cbd5e1;}
+
 .edge-badge{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:20px;font-size:9px;font-weight:800;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.4px;}
 .edge-pos{background:rgba(16,185,129,.18);color:var(--green);border:1px solid rgba(16,185,129,.4);}
 .edge-strong{background:linear-gradient(135deg,var(--green),var(--lime));color:#fff;border:1px solid var(--lime);}
 .edge-neutral{background:rgba(245,158,11,.15);color:var(--orange);border:1px solid rgba(245,158,11,.3);}
 .edge-neg{background:rgba(239,68,68,.12);color:var(--red);border:1px solid rgba(239,68,68,.3);}
-.value-table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;font-size:11px;margin-top:10px;}
-.value-table th{background:#0f1a2c;color:var(--text2);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:8px 6px;text-align:center;border-bottom:1px solid var(--border);}
-.value-table td{padding:8px 6px;text-align:center;border-bottom:1px solid rgba(255,255,255,.04);font-family:'JetBrains Mono',monospace;font-weight:600;}
-.value-table td.mkt{text-align:left;font-family:'Inter',sans-serif;font-weight:700;color:var(--text);}
+.value-table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid #1e2a44;border-radius:10px;overflow:hidden;font-size:11px;margin-top:10px;background:#0a0a0a;}
+.value-table th{background:#000;color:#94a3b8;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:8px 6px;text-align:center;border-bottom:1px solid #1e2a44;}
+.value-table td{padding:8px 6px;text-align:center;border-bottom:1px solid rgba(255,255,255,.04);font-family:'JetBrains Mono',monospace;font-weight:600;color:#f1f5f9;}
+.value-table td.mkt{text-align:left;font-family:'Inter',sans-serif;font-weight:700;color:#fff;}
 .value-table td.pos-edge{color:var(--green);background:rgba(16,185,129,.05);} .value-table td.neg-edge{color:var(--red);}
 .value-table td.kelly{color:var(--cyan);}
 .best-value{background:linear-gradient(135deg,rgba(16,185,129,.10),rgba(132,204,22,.10));border:1px solid rgba(16,185,129,.4);border-radius:12px;padding:12px;margin-top:10px;}
 .best-value-title{font-size:10px;font-weight:800;color:var(--green);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
 .best-value-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
-.best-value-mkt{font-size:14px;font-weight:800;color:var(--text);}
+.best-value-mkt{font-size:14px;font-weight:800;color:#fff;}
 .best-value-odd{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:900;color:var(--cyan);}
 .best-value-edge{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:900;color:var(--green);}
 .mc-with-odds{position:relative;} .mc-edge-corner{position:absolute;top:8px;right:8px;}
-.odds-summary{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;padding:8px;background:var(--bg);border-radius:8px;font-size:10px;}
-.odds-summary-item{display:flex;align-items:center;gap:4px;color:var(--text2);}
+.odds-summary{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;padding:8px;background:#000;border-radius:8px;font-size:10px;border:1px solid #1e2a44;}
+.odds-summary-item{display:flex;align-items:center;gap:4px;color:#94a3b8;}
 .odds-summary-item strong{color:var(--cyan);font-family:'JetBrains Mono',monospace;}
 .no-odds{padding:14px;background:rgba(245,158,11,.06);border:1px dashed rgba(245,158,11,.3);border-radius:10px;text-align:center;color:var(--orange);font-size:11px;}
 .no-odds strong{display:block;font-size:12px;margin-bottom:3px;}
 
+/* Toast de boost */
+.boost-toast-info{margin-top:8px;padding:8px 10px;background:linear-gradient(135deg,rgba(6,182,212,.08),rgba(59,130,246,.05));border:1px solid rgba(6,182,212,.3);border-radius:8px;font-size:10px;color:#cbd5e1;line-height:1.5;}
+.boost-toast-info strong{color:var(--cyan);}
+
 </style></head><body><div class="X">
-<div class="hd"><div class="hb2">Analisador Operacional v6.8</div><h1>Multi-PDF - 11 Métodos • Legendas Explicativas M2/M3/M10b</h1><p>11 Métodos com legendas explicativas (apostar em / ganha se / perde se / exemplos) nos cards High Value</p><div class="ck" id="clk"></div></div>
+<div class="hd"><div class="hb2">Analisador Operacional v7.0</div><h1>Multi-PDF - 11 Métodos • 💰 Painel de Odds Preto + Odd Boost no Score</h1><p>Painel de odds em fundo preto + Aplicar Valor influencia o score dos métodos com boost/penalty automático</p><div class="ck" id="clk"></div></div>
 <div id="uS"><div class="dz" id="dz"><input type="file" id="fi" accept=".pdf" multiple><div class="ic3">DOC</div><h3>Arraste seus PDFs aqui</h3><p>ou clique para selecionar</p><div class="fl" id="fl"></div></div>
 <div style="text-align:center;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;"><button class="btn b1" id="pb" disabled onclick="run()">Processar PDFs</button><button class="btn b2" id="cb" style="display:none;" onclick="clr()">Limpar</button></div>
 <div class="pb" id="bar" style="display:none;"><div class="pf" id="fill"></div></div></div>
 <div id="rS"><div id="gS"></div>
-<div class="export-bar" id="exportBar" style="display:none;"><div class="export-bar-info"><strong>Exportar:</strong><div class="export-opt" id="includePossibleWrap" onclick="document.getElementById('includePossible').click()"><input type="checkbox" id="includePossible" onclick="event.stopPropagation();toggleIncludePossible()"><label>Incluir Possíveis</label></div><div class="logo-upload-wrap" style="margin-left:8px"><input type="file" id="logoInput" accept="image/png,image/jpeg,image/svg+xml" style="display:none" onchange="onLogoUpload(event)"><img id="logoPreview" class="logo-preview" style="display:none" alt="logo"><button class="logo-upload-btn" onclick="document.getElementById('logoInput').click()"><span id="logoBtnLabel">Carregar Logo</span></button><button class="logo-remove" id="logoRemove" onclick="removeLogo()" style="display:none" title="Remover logo">✕</button></div></div><div class="export-btn-grp"><button class="export-btn" onclick="exportPDF()">📄 Exportar PDF</button><button class="export-btn alt" onclick="exportCSV()">📊 Exportar CSV</button></div></div><div class="fb" id="formationFilters" style="display:none;"></div><div class="fb" id="fB" style="display:none;"><button class="fbtn active" onclick="aF('all',this)">Todos</button><button class="fbtn" onclick="aF('confirmed',this)">Confirmadas</button><button class="fbtn" onclick="aF('possible',this)">Possiveis</button><button class="fbtn" onclick="aF('avoid',this)">Evitar</button><button class="fbtn" onclick="aF('reject',this)">Rejeitar</button><div class="fs"></div><button class="fbtn" onclick="aF('back',this)">Back</button><button class="fbtn" onclick="aF('lay',this)">Lay</button><div class="fs"></div><button class="fbtn" onclick="openModal()">Filtrar Metodo...</button></div>
+<div class="export-bar" id="exportBar" style="display:none;"><div class="export-bar-info"><strong>Opções:</strong><div class="export-opt" id="includePossibleWrap" onclick="document.getElementById('includePossible').click()"><input type="checkbox" id="includePossible" onclick="event.stopPropagation();toggleIncludePossible()"><label>Incluir Possíveis</label></div><div class="export-opt beginner" id="beginnerModeWrap" onclick="document.getElementById('beginnerModeCb').click()"><input type="checkbox" id="beginnerModeCb" onclick="event.stopPropagation();toggleBeginnerMode()"><label>🎓 Modo Iniciante</label></div><div class="logo-upload-wrap" style="margin-left:8px"><input type="file" id="logoInput" accept="image/png,image/jpeg,image/svg+xml" style="display:none" onchange="onLogoUpload(event)"><img id="logoPreview" class="logo-preview" style="display:none" alt="logo"><button class="logo-upload-btn" onclick="document.getElementById('logoInput').click()"><span id="logoBtnLabel">Carregar Logo</span></button><button class="logo-remove" id="logoRemove" onclick="removeLogo()" style="display:none" title="Remover logo">✕</button></div></div><div class="export-btn-grp"><button class="export-btn" onclick="exportPDF()">📄 Exportar PDF</button><button class="export-btn alt" onclick="exportCSV()">📊 Exportar CSV</button></div></div><div class="fb" id="formationFilters" style="display:none;"></div><div class="fb" id="fB" style="display:none;"><button class="fbtn active" onclick="aF('all',this)">Todos</button><button class="fbtn" onclick="aF('confirmed',this)">Confirmadas</button><button class="fbtn" onclick="aF('possible',this)">Possiveis</button><button class="fbtn" onclick="aF('avoid',this)">Evitar</button><button class="fbtn" onclick="aF('reject',this)">Rejeitar</button><div class="fs"></div><button class="fbtn" onclick="aF('back',this)">Back</button><button class="fbtn" onclick="aF('lay',this)">Lay</button><div class="fs"></div><button class="fbtn" onclick="openModal()">Filtrar Metodo...</button></div>
 <div id="mR"></div></div>
-<div class="ft"><p>Analisador Operacional v6.8</p></div>
+<div class="ft"><p>Analisador Operacional v7.0</p></div>
 </div>
 <div class="mo" id="mModal"><div class="mod"><h3>Filtrar por Metodo <button class="mod-x" onclick="closeModal()">X</button></h3><div style="margin-bottom:10px;"><button class="fbtn active" onclick="aF('all',this);closeModal();" style="width:100%;">Mostrar Todos</button></div>
 <div class="mod-g">
@@ -381,7 +410,6 @@ function parse(raw){
   var _xF=gAV(t,'xG m[eé]dio a favor por jogo\\s+([\\d.,]+)');
   var _xA=gAV(t,'xG m[eé]dio contra por jogo\\s+([\\d.,]+)');
   
-  /* Parser de formações táticas */
   var formationRx=/\b([3-5])\s*[-–]\s*([1-5])\s*[-–]\s*([1-5])(?:\s*[-–]\s*([1-5]))?\b/g;
   var formationsAll=[],fmM;
   while((fmM=formationRx.exec(t))!==null){var parts=[fmM[1],fmM[2],fmM[3]];if(fmM[4])parts.push(fmM[4]);var sum=parts.reduce(function(s,n){return s+parseInt(n);},0);if(sum===10){formationsAll.push(parts.join('-'));}}
@@ -464,12 +492,12 @@ function analyzeMatch(d){
   var lam=d.home.avgScored||1,mu=d.away.avgScored||.5,poi=calcPoisson(lam,mu),ms=[];
   function cW(f){return f.filter(function(x){return x==='W';}).length;}
   var ppgD=d.home.ppg-d.away.ppg,favH=d.home.ppg>=d.away.ppg,fav=favH?d.home:d.away,und=favH?d.away:d.home,fF=favH?d.homeForm:d.awayForm;
-  function aM(id,nm,tp,cr,rk,mk,mo,m2,en,ex,st,oddMin,oddMax,oddIdeal,highValue){var ps=cr.filter(function(c){return c.p;}).length;ms.push({id:id,name:nm,type:tp,criteria:cr,passed:ps,total:cr.length,score:ps/cr.length*100,risk:rk,market:mk,marketOdd:mo,market2:m2,entry:en,exit:ex,stake:st,oddMin:oddMin||null,oddMax:oddMax||null,oddIdeal:oddIdeal||null,highValue:highValue||false});}
+  function aM(id,nm,tp,cr,rk,mk,mo,m2,en,ex,st,oddMin,oddMax,oddIdeal,highValue){var ps=cr.filter(function(c){return c.p;}).length;ms.push({id:id,name:nm,type:tp,criteria:cr,passed:ps,total:cr.length,score:ps/cr.length*100,risk:rk,market:mk,marketOdd:mo,market2:m2,entry:en,exit:ex,stake:st,oddMin:oddMin||null,oddMax:oddMax||null,oddIdeal:oddIdeal||null,highValue:highValue||false,oddBoost:0,oddBoostLabel:''});}
   var r1=Math.abs(ppgD)>1.5?'BAIXO':Math.abs(ppgD)>=1?'MEDIO':'ALTO';
   aM(1,'Back Favorito','back',[{l:'PPG diff '+Math.abs(ppgD).toFixed(2),p:Math.abs(ppgD)>=1.2},{l:'Win% '+fav.winPct+'%',p:fav.winPct>55},{l:'1oMarcar '+fav.firstToScore+'%',p:fav.firstToScore>60},{l:'Forma '+cW(fF)+'W/5',p:cW(fF)>=3},{l:'Gols/j '+fav.avgScored.toFixed(2),p:fav.avgScored>=1.5},{l:'xG '+fav.xgFor.toFixed(2)+' vs '+fav.xgAgainst.toFixed(2),p:fav.xgFor>fav.xgAgainst},{l:'CS '+fav.cleanSheet+'%',p:fav.cleanSheet>30}],r1,'Vitoria '+(favH?d.homeTeam:d.awayTeam),'min. '+(1/poi.pHome).toFixed(2),'Dupla Chance','Pre-jogo','Gol fav',r1==='BAIXO'?3:r1==='MEDIO'?2:1,1.55,2.20,1.85,false);
   var aB=(d.home.btts+d.away.btts)/2,aO=(d.homeOverTotal.o25+d.awayOverTotal.o25)/2,aT2=(d.home.avgTotal+d.away.avgTotal)/2,xC=d.home.xgFor+d.away.xgFor;
-  aM(2,'Back 2x2','back',[{l:'BTTS '+aB.toFixed(0)+'%',p:aB>55},{l:'Over2.5 '+aO.toFixed(0)+'%',p:aO>55},{l:'Media '+aT2.toFixed(2),p:aT2>=2.8},{l:'failedToScore <25%',p:d.home.failedToScore<25&&d.away.failedToScore<25},{l:'xG comb '+xC.toFixed(2),p:xC>=2.5}],aB>65?'BAIXO':'ALTO','BTTS SIM + Over 2.5','min. 1.90 (alta=MAIS valor)','Over 2.5','Pre-jogo','2o gol ou 1x1 no 1T',2,1.90,99,2.80,true);
-  aM(3,'Back Goleada','back',[{l:'PPG diff '+Math.abs(ppgD).toFixed(2),p:Math.abs(ppgD)>=2},{l:'Dom gols/j '+fav.avgScored.toFixed(2),p:fav.avgScored>=2.2},{l:'Adv sofridos '+und.avgConceded.toFixed(2),p:und.avgConceded>=2},{l:'Over3.5 insuf.',p:false},{l:'Adv fail '+und.failedToScore+'%',p:und.failedToScore>=40}],'ALTO','Over 3.5','min. 2.30 (alta=MAIS valor)','Placar exato','Pre-jogo','3o gol ou 2x1 antes 60min',1,2.30,99,3.50,true);
+  aM(2,'Back 2x2','back',[{l:'BTTS '+aB.toFixed(0)+'%',p:aB>55},{l:'Over2.5 '+aO.toFixed(0)+'%',p:aO>55},{l:'Media '+aT2.toFixed(2),p:aT2>=2.8},{l:'failedToScore <25%',p:d.home.failedToScore<25&&d.away.failedToScore<25},{l:'xG comb '+xC.toFixed(2),p:xC>=2.5}],aB>65?'BAIXO':'ALTO','BTTS SIM + Over 2.5','min. 1.90','Over 2.5','Pre-jogo','2o gol ou 1x1 no 1T',2,1.90,99,2.80,true);
+  aM(3,'Back Goleada','back',[{l:'PPG diff '+Math.abs(ppgD).toFixed(2),p:Math.abs(ppgD)>=2},{l:'Dom gols/j '+fav.avgScored.toFixed(2),p:fav.avgScored>=2.2},{l:'Adv sofridos '+und.avgConceded.toFixed(2),p:und.avgConceded>=2},{l:'Over3.5 insuf.',p:false},{l:'Adv fail '+und.failedToScore+'%',p:und.failedToScore>=40}],'ALTO','Over 3.5','min. 2.30','Placar exato','Pre-jogo','3o gol ou 2x1 antes 60min',1,2.30,99,3.50,true);
   var a2Tg=d.home2T.avgScored+d.away2T.avgScored;
   aM(4,'Over 70min','back',[{l:'Media 2T '+a2Tg.toFixed(2),p:a2Tg>=1.3},{l:'1oToScore 2T',p:d.home2T.won>35||d.away2T.won>35},{l:'PPG diff '+Math.abs(ppgD).toFixed(2),p:Math.abs(ppgD)<1},{l:'BTTS 2T fail',p:d.home2T.failedToScore<50&&d.away2T.failedToScore<50},{l:'Gols 2T '+(d.home2T.goalsScored+d.away2T.goalsScored),p:(d.home2T.goalsScored+d.away2T.goalsScored)>=10}],'MEDIO','Over 0.5 70-90','min. 1.45','Proximo gol','Min 68-72','Gol pos-70min',2,1.45,2.00,1.70,false);
   var p10=poi.matrix[1][0],p01=poi.matrix[0][1],p20=poi.matrix[2][0],p02=poi.matrix[0][2];
@@ -492,14 +520,7 @@ function analyzeMatch(d){
   else if(favTeamData.avgScored>=1.8&&favTeamData.avgConceded>=1.5)favStyle='OFENSIVO';
   else if(favTeamData.avgScored<=1.2&&favTeamData.avgConceded<=0.9)favStyle='DEFENSIVO';
   else if(favTeamData.avgScored<=1.0&&favTeamData.avgConceded>=1.5)favStyle='FRACO';
-  aM(10,'Momentum & Eficiência','back',[
-    {l:'Momentum '+favMomPct.toFixed(0)+'%',p:favMomPct>=60},
-    {l:'Estilo '+favStyle,p:favStyle==='DOMINANTE'||favStyle==='OFENSIVO'},
-    {l:'Ataque vs xG '+favAttackEff.toFixed(2)+'x',p:favAttackEff>=1.0},
-    {l:'Defesa vs xG '+favDefenseEff.toFixed(2)+'x',p:favDefenseEff<=1.0},
-    {l:'Forma '+cW(favFormData)+'W/5',p:cW(favFormData)>=3},
-    {l:'Conversão '+favConversion.toFixed(1)+'%',p:favConversion>=10}
-  ],favMomPct>=70?'BAIXO':favMomPct>=50?'MEDIO':'ALTO','Back '+(favH?d.homeTeam:d.awayTeam),'min. '+(1/poi.pHome).toFixed(2),'Dupla Chance','Pre-jogo','Gol fav',favMomPct>=70?3:2,1.50,2.30,1.85,false);
+  aM(10,'Momentum & Eficiência','back',[{l:'Momentum '+favMomPct.toFixed(0)+'%',p:favMomPct>=60},{l:'Estilo '+favStyle,p:favStyle==='DOMINANTE'||favStyle==='OFENSIVO'},{l:'Ataque vs xG '+favAttackEff.toFixed(2)+'x',p:favAttackEff>=1.0},{l:'Defesa vs xG '+favDefenseEff.toFixed(2)+'x',p:favDefenseEff<=1.0},{l:'Forma '+cW(favFormData)+'W/5',p:cW(favFormData)>=3},{l:'Conversão '+favConversion.toFixed(1)+'%',p:favConversion>=10}],favMomPct>=70?'BAIXO':favMomPct>=50?'MEDIO':'ALTO','Back '+(favH?d.homeTeam:d.awayTeam),'min. '+(1/poi.pHome).toFixed(2),'Dupla Chance','Pre-jogo','Gol fav',favMomPct>=70?3:2,1.50,2.30,1.85,false);
   var hAttackEff=d.home.xgFor>0?(d.home.avgScored/d.home.xgFor):0;
   var aAttackEff=d.away.xgFor>0?(d.away.avgScored/d.away.xgFor):0;
   var avgAttackEffBoth=(hAttackEff+aAttackEff)/2;
@@ -520,20 +541,10 @@ function analyzeMatch(d){
   if(d.away.avgScored>=2.0&&d.away.avgConceded<=1.0)aStyle='DOMINANTE';
   else if(d.away.avgScored>=1.8)aStyle='OFENSIVO';
   var goalsFriendly=(hStyle==='DOMINANTE'||hStyle==='OFENSIVO')||(aStyle==='DOMINANTE'||aStyle==='OFENSIVO');
-  aM(11,'Momentum & Eficiência (Gols)','back',[
-    {l:'Over 2.5 médio '+over25Avg.toFixed(0)+'%',p:over25Avg>=55},
-    {l:'BTTS médio '+bttsAvg.toFixed(0)+'%',p:bttsAvg>=55},
-    {l:'Média gols '+avgGoalsExpected.toFixed(2),p:avgGoalsExpected>=2.7},
-    {l:'xG combinado '+xgCombined.toFixed(2),p:xgCombined>=2.5},
-    {l:'Ataque vs xG (médio) '+avgAttackEffBoth.toFixed(2)+'x',p:avgAttackEffBoth>=0.95},
-    {l:'Conversão média '+avgConvBoth.toFixed(1)+'%',p:avgConvBoth>=10},
-    {l:'Falhou em marcar (médio) '+avgFail.toFixed(0)+'%',p:avgFail<30},
-    {l:'Momentum médio '+avgMomBoth.toFixed(0)+'%',p:avgMomBoth>=50},
-    {l:'Estilo ofensivo',p:goalsFriendly}
-  ],avgGoalsExpected>=3.0&&bttsAvg>=60?'BAIXO':avgGoalsExpected>=2.7?'MEDIO':'ALTO','Over 2.5 + BTTS Sim','min. 1.80 (alta=MAIS valor)','Over 2.5','Pre-jogo','1x1 no 1T',avgGoalsExpected>=3.0?3:2,1.80,99,2.80,true);
+  aM(11,'Momentum & Eficiência (Gols)','back',[{l:'Over 2.5 médio '+over25Avg.toFixed(0)+'%',p:over25Avg>=55},{l:'BTTS médio '+bttsAvg.toFixed(0)+'%',p:bttsAvg>=55},{l:'Média gols '+avgGoalsExpected.toFixed(2),p:avgGoalsExpected>=2.7},{l:'xG combinado '+xgCombined.toFixed(2),p:xgCombined>=2.5},{l:'Ataque vs xG (médio) '+avgAttackEffBoth.toFixed(2)+'x',p:avgAttackEffBoth>=0.95},{l:'Conversão média '+avgConvBoth.toFixed(1)+'%',p:avgConvBoth>=10},{l:'Falhou em marcar (médio) '+avgFail.toFixed(0)+'%',p:avgFail<30},{l:'Momentum médio '+avgMomBoth.toFixed(0)+'%',p:avgMomBoth>=50},{l:'Estilo ofensivo',p:goalsFriendly}],avgGoalsExpected>=3.0&&bttsAvg>=60?'BAIXO':avgGoalsExpected>=2.7?'MEDIO':'ALTO','Over 2.5 + BTTS Sim','min. 1.80','Over 2.5','Pre-jogo','1x1 no 1T',avgGoalsExpected>=3.0?3:2,1.80,99,2.80,true);
   return{methods:ms,poisson:poi};
 }
-function gV(m){var L=m.type==='lay';if(m.score>=70)return L?{t:'LAY CONFIRMADO',c:'confirmed',b:'bc',i:'OK'}:{t:'CONFIRMADA',c:'confirmed',b:'bc',i:'OK'};if(m.score>=50)return L?{t:'LAY POSSIVEL',c:'possible',b:'bp',i:'~'}:{t:'POSSIVEL',c:'possible',b:'bp',i:'~'};if(m.score>=30)return L?{t:'EVITAR LAY',c:'avoid',b:'ba',i:'!'}:{t:'EVITAR',c:'avoid',b:'ba',i:'!'};return L?{t:'LAY REJEITADO',c:'reject',b:'br',i:'X'}:{t:'REJEITAR',c:'reject',b:'br',i:'X'};}
+function gV(m){var L=m.type==='lay';var s=m.score+(m.oddBoost||0);if(s>=70)return L?{t:'LAY CONFIRMADO',c:'confirmed',b:'bc',i:'OK'}:{t:'CONFIRMADA',c:'confirmed',b:'bc',i:'OK'};if(s>=50)return L?{t:'LAY POSSIVEL',c:'possible',b:'bp',i:'~'}:{t:'POSSIVEL',c:'possible',b:'bp',i:'~'};if(s>=30)return L?{t:'EVITAR LAY',c:'avoid',b:'ba',i:'!'}:{t:'EVITAR',c:'avoid',b:'ba',i:'!'};return L?{t:'LAY REJEITADO',c:'reject',b:'br',i:'X'}:{t:'REJEITAR',c:'reject',b:'br',i:'X'};}
 function sC(s){return s>=70?'var(--green)':s>=50?'var(--orange)':s>=30?'var(--red)':'#9ca3af';}
 function bC(s){return s>=70?'background:linear-gradient(90deg,var(--green),var(--lime))':s>=50?'background:linear-gradient(90deg,var(--orange),var(--gold))':s>=30?'background:linear-gradient(90deg,var(--red),var(--orange))':'background:linear-gradient(90deg,#6b7280,#9ca3af)';}
 function cV(v,h,m,i){if(i)return v<=h?'hi':v<=m?'mi':'lo';return v>=h?'hi':v>=m?'mi':'lo';}
@@ -549,18 +560,34 @@ function rVisualSummary(d,a){var p=a.poisson;var pH=p.pHome*100,pD=p.pDraw*100,p
 function rMC(m){
   var v=gV(m);
   var idLabel=(m.id===11?'M10b':'M'+m.id);
-  var highValueBadge = m.highValue ? '<div class="hv-badge" title="Quanto mais alta a odd, maior o valor!"><span class="hv-star">⭐</span> ODD ALTA = MAIS VALOR</div>' : '';
-  /* NOVO v6.8: Legenda explicativa detalhada para métodos High Value */
+  var effectiveScore=m.score+(m.oddBoost||0);
+  var highValueBadge = m.highValue ? '<div class="hv-badge"><span class="hv-star">⭐</span> ODD ALTA = MAIS VALOR</div>' : '';
+  /* v7.0: Badge mostrando o boost/penalty da odd se aplicado */
+  var oddBoostBadge='';
+  if(m.oddBoost && m.oddBoost!==0){
+    var bcls=m.oddBoost>=15?'b-strong':m.oddBoost>=5?'b-pos':m.oddBoost>=-5?'b-neutral':'b-neg';
+    var sign=m.oddBoost>0?'+':'';
+    oddBoostBadge='<div class="odd-boost-badge '+bcls+'"><span class="ob-icon">'+(m.oddBoost>0?'↑':'↓')+'</span> Odd: '+sign+m.oddBoost.toFixed(0)+' pts <span style="opacity:.85;font-weight:600">('+m.oddBoostLabel+')</span></div>';
+  }
   var legendBlock='';
-  if(m.highValue && METHOD_LEGENDS[m.id]){
+  var showLegend = (m.highValue || BEGINNER_MODE) && METHOD_LEGENDS[m.id];
+  if(showLegend){
     var leg=METHOD_LEGENDS[m.id];
-    legendBlock='<div class="entry-legend">'
+    var scoreGrid='';
+    if(leg.wins && leg.loses){
+      scoreGrid='<div class="score-grid">';
+      for(var sw=0;sw<leg.wins.length;sw++)scoreGrid+='<div class="score-cell win">'+leg.wins[sw]+'</div>';
+      for(var sl=0;sl<leg.loses.length;sl++)scoreGrid+='<div class="score-cell lose">'+leg.loses[sl]+'</div>';
+      scoreGrid+='</div>';
+    }
+    var teaserCls=m.highValue?'':'beginner-only';
+    legendBlock='<div class="entry-legend '+teaserCls+'">'
       +'<div class="entry-legend-title">'+leg.icon+' '+leg.title+'</div>'
       +'<div class="entry-legend-market">'+leg.shortMarket+'</div>'
+      +scoreGrid
       +'<div class="entry-legend-grid">'
       +'<div class="entry-legend-item win"><span class="elg-lbl">✅ GANHA SE</span><span class="elg-val">'+leg.winCondition+'</span></div>'
       +'<div class="entry-legend-item lose"><span class="elg-lbl">❌ PERDE SE</span><span class="elg-val">'+leg.loseCondition+'</span></div>'
-      +'<div class="entry-legend-item example"><span class="elg-lbl">📊 EXEMPLOS</span><span class="elg-val">'+leg.examples+'</span></div>'
       +'<div class="entry-legend-item ideal"><span class="elg-lbl">⭐ IDEAL</span><span class="elg-val">'+leg.ideal+'</span></div>'
       +'</div></div>';
   }
@@ -570,43 +597,53 @@ function rMC(m){
     var idealLabel=m.oddIdeal?m.oddIdeal.toFixed(2):'-';
     oddRange='<div class="odd-range '+(m.highValue?'hv':'')+'"><div class="odd-range-row"><span class="orl">Mín</span><span class="orv mn">'+m.oddMin.toFixed(2)+'</span><span class="orl">Ideal</span><span class="orv id">'+idealLabel+'</span><span class="orl">Máx</span><span class="orv mx">'+maxLabel+'</span></div></div>';
   }
-  return '<div class="mc '+v.c+(m.highValue?' mc-hv':'')+'" data-v="'+v.c+'" data-t="'+m.type+'" data-mid="'+m.id+'"><div class="mhd"><div><div class="mnum">'+idLabel+'</div><div class="mn">'+m.name+'</div></div><span class="vb '+v.b+'">'+v.i+' '+v.t+'</span></div>'+highValueBadge+legendBlock+'<div class="sbb"><div class="sbf" style="width:'+m.score+'%;'+bC(m.score)+'"></div></div><div class="sbl"><span>Score</span><span style="color:'+sC(m.score)+'">'+m.score.toFixed(1)+'% ('+m.passed+'/'+m.total+')</span></div>'+(m.score>=50?'<div style="margin:4px 0"><span class="rb r'+(m.risk==='BAIXO'?'l':m.risk==='MEDIO'?'m':'h')+'">'+m.risk+'</span> <span style="font-size:8px;color:var(--text3)">Stake '+m.stake+'%</span></div>':'')+oddRange+'<ul class="cl">'+m.criteria.map(function(c){return '<li><span class="ck2 '+(c.p?'hi':'lo')+'">'+(c.p?'OK':'X')+'</span>'+c.l+'</li>';}).join('')+'</ul></div>';
+  /* Score effective display */
+  var scoreDisplay='<span style="color:'+sC(effectiveScore)+'">'+m.score.toFixed(1)+'%';
+  if(m.oddBoost && m.oddBoost!==0)scoreDisplay+=' <span style="font-size:9px;color:'+(m.oddBoost>0?'var(--green)':'var(--red)')+';font-weight:800">'+(m.oddBoost>0?'+':'')+m.oddBoost.toFixed(0)+'</span> = <span style="color:'+sC(effectiveScore)+'">'+effectiveScore.toFixed(1)+'%</span>';
+  scoreDisplay+=' ('+m.passed+'/'+m.total+')</span>';
+  return '<div class="mc '+v.c+(m.highValue?' mc-hv':'')+'" data-v="'+v.c+'" data-t="'+m.type+'" data-mid="'+m.id+'"><div class="mhd"><div><div class="mnum">'+idLabel+'</div><div class="mn">'+m.name+'</div></div><span class="vb '+v.b+'">'+v.i+' '+v.t+'</span></div>'+highValueBadge+oddBoostBadge+legendBlock+'<div class="sbb"><div class="sbf" style="width:'+Math.min(effectiveScore,100)+'%;'+bC(effectiveScore)+'"></div></div><div class="sbl"><span>Score</span>'+scoreDisplay+'</div>'+(effectiveScore>=50?'<div style="margin:4px 0"><span class="rb r'+(m.risk==='BAIXO'?'l':m.risk==='MEDIO'?'m':'h')+'">'+m.risk+'</span> <span style="font-size:8px;color:var(--text3)">Stake '+m.stake+'%</span></div>':'')+oddRange+'<ul class="cl">'+m.criteria.map(function(c){return '<li><span class="ck2 '+(c.p?'hi':'lo')+'">'+(c.p?'OK':'X')+'</span>'+c.l+'</li>';}).join('')+'</ul></div>';
 }
 
 // ═══════════════════════════════════════════════════════
-// 🆕 v6.8: LEGENDAS EXPLICATIVAS para M2, M3 e M10b
+// 🎓 v7.0: BEGINNER MODE + LEGENDAS + ODD BOOST
 // ═══════════════════════════════════════════════════════
-var METHOD_LEGENDS = {
-  /* M2 - Back 2x2 (combo BTTS Sim + Over 2.5) */
-  2: {
-    icon: '🎯',
-    title: 'Back 2×2 — Combo Over 2.5 + BTTS Sim',
-    shortMarket: 'APOSTAR: Over 2.5 gols + Ambos Marcam (BTTS Sim)',
-    winCondition: 'Jogo termina com 3+ gols E ambos times marcando',
-    loseCondition: 'Jogo termina com 0, 1 ou 2 gols, OU um time não marca',
-    examples: 'Ganha: 1-2, 2-1, 2-2, 3-2, 2-3 | Perde: 0-0, 1-0, 0-1, 2-0, 3-0',
-    ideal: 'Dois times ofensivos com defesas vazadas (BTTS ≥60% e Over 2.5 ≥65%)'
-  },
-  /* M3 - Back Goleada (Over 3.5) */
-  3: {
-    icon: '⚽💥',
-    title: 'Back Goleada — Over 3.5 Gols',
-    shortMarket: 'APOSTAR: Mais de 3.5 gols totais no jogo (4 ou mais)',
-    winCondition: 'Jogo termina com 4+ gols totais (qualquer placar)',
-    loseCondition: 'Jogo termina com 0, 1, 2 ou 3 gols totais',
-    examples: 'Ganha: 3-1, 4-0, 2-2, 5-1, 3-2 | Perde: 2-1, 1-1, 2-0, 1-0',
-    ideal: 'Favorito MUITO dominante (PPG diff ≥2) vs azarão com defesa frágil'
-  },
-  /* M10b - Momentum & Eficiência Gols */
-  11: {
-    icon: '⚡⚽',
-    title: 'M10b — Combo Gols por Eficiência',
-    shortMarket: 'APOSTAR: Over 2.5 gols + BTTS Sim (como M2, com filtros mais rigorosos)',
-    winCondition: 'Ambos times marcam E placar final tem 3+ gols',
-    loseCondition: 'Algum time fica em branco OU jogo encerra com 2 gols ou menos',
-    examples: 'Ganha: 2-1, 1-2, 2-2, 3-1, 1-3 | Perde: 0-0, 2-0, 1-0, 0-2, 1-1',
-    ideal: 'Ambos times com momentum forte, ataque acima do xG e estilo OFENSIVO'
+var BEGINNER_MODE = false;
+try{BEGINNER_MODE = localStorage.getItem('beginner_mode')==='true';}catch(_){}
+function toggleBeginnerMode(){
+  BEGINNER_MODE = !BEGINNER_MODE;
+  try{localStorage.setItem('beginner_mode', BEGINNER_MODE?'true':'false');}catch(_){}
+  var cb=document.getElementById('beginnerModeCb');
+  var wrap=document.getElementById('beginnerModeWrap');
+  if(cb)cb.checked=BEGINNER_MODE;
+  if(wrap){if(BEGINNER_MODE)wrap.classList.add('active');else wrap.classList.remove('active');}
+  if(typeof rerenderAllMatches==='function')rerenderAllMatches();
+}
+function rerenderAllMatches(){
+  if(!AR.length)return;
+  var mr=document.getElementById('mR');
+  if(!mr)return;
+  var openStates={};
+  for(var i=0;i<AR.length;i++){
+    var bd=document.getElementById('bd'+i);
+    if(bd)openStates[i]=bd.classList.contains('open');
   }
+  var mh='';for(var j=0;j<AR.length;j++)mh+=rMatch(AR[j],j);
+  mr.innerHTML=mh;
+  for(var k in openStates){if(openStates[k])tM(parseInt(k));}
+}
+
+var METHOD_LEGENDS = {
+  1:{icon:'🏆',title:'M1 — Back Favorito (Vitória 1X2)',shortMarket:'APOSTAR: Vitória do time favorito (1X2)',winCondition:'O time favorito vence a partida no tempo regular',loseCondition:'Empate OU vitória do adversário (azarão)',wins:['1-0','2-0','2-1','3-1','3-0'],loses:['0-0','1-1','0-1','1-2','0-2'],ideal:'Favorito com PPG ≥ 1.2 acima do adversário, em casa, forma de 3+W em 5'},
+  2:{icon:'🎯',title:'M2 — Back 2×2 (Combo Over 2.5 + BTTS Sim)',shortMarket:'APOSTAR: Over 2.5 gols + Ambos Marcam (BTTS Sim)',winCondition:'Jogo termina com 3+ gols E ambos times marcando',loseCondition:'0, 1 ou 2 gols totais OU um time fica em branco',wins:['1-2','2-1','2-2','3-2','2-3'],loses:['0-0','1-0','0-1','2-0','3-0'],ideal:'Dois ataques fortes vs defesas vazadas (BTTS ≥60% e Over 2.5 ≥65%)'},
+  3:{icon:'💥',title:'M3 — Back Goleada (Over 3.5)',shortMarket:'APOSTAR: Mais de 3.5 gols totais (4 ou mais)',winCondition:'Jogo termina com 4+ gols totais (qualquer placar)',loseCondition:'0, 1, 2 ou 3 gols totais',wins:['3-1','4-0','2-2','5-1','3-2'],loses:['2-1','1-1','2-0','1-0','0-1'],ideal:'Favorito MUITO dominante (PPG diff ≥2) vs azarão com defesa frágil'},
+  4:{icon:'⏱',title:'M4 — Over 0.5 nos últimos 20min (Live)',shortMarket:'APOSTAR: Over 0.5 gol entre minutos 70-90 (entrada LIVE)',winCondition:'Sai pelo menos 1 gol entre o minuto 70 e 90+',loseCondition:'Nenhum gol entre 70 e 90+ (partida sem gol no fim)',wins:['Gol aos 71','Gol aos 85','Gol aos 90+'],loses:['Sem gol 70-90'],ideal:'Times que costumam marcar no 2ºT, PPG diff <1 e BTTS 2T moderado'},
+  5:{icon:'🚫',title:'M5 — Lay 1×0 (Apostar contra placar 1×0)',shortMarket:'APOSTAR CONTRA o placar exato 1-0 (mandante vence 1-0)',winCondition:'Qualquer placar EXCETO 1-0',loseCondition:'Placar final é exatamente 1-0',wins:['0-0','2-0','1-1','2-1','0-1'],loses:['1-0'],ideal:'Visitante tem alta probabilidade de marcar pelo menos 1 gol'},
+  6:{icon:'🚫',title:'M6 — Lay 0×1 (Apostar contra placar 0×1)',shortMarket:'APOSTAR CONTRA o placar exato 0-1 (visitante vence 0-1)',winCondition:'Qualquer placar EXCETO 0-1',loseCondition:'Placar final é exatamente 0-1',wins:['0-0','1-0','1-1','2-1','0-2'],loses:['0-1'],ideal:'Mandante tem alta probabilidade de marcar e baixo Clean Sheet'},
+  7:{icon:'🚫',title:'M7 — Lay 2×0 (Apostar contra placar 2×0)',shortMarket:'APOSTAR CONTRA o placar exato 2-0 (mandante vence 2-0)',winCondition:'Qualquer placar EXCETO 2-0',loseCondition:'Placar final é exatamente 2-0',wins:['0-0','1-0','1-1','2-1','2-2'],loses:['2-0'],ideal:'Visitante com chance de marcar e jogo com Over 2.5 médio'},
+  8:{icon:'🚫',title:'M8 — Lay 0×2 (Apostar contra placar 0×2)',shortMarket:'APOSTAR CONTRA o placar exato 0-2 (visitante vence 0-2)',winCondition:'Qualquer placar EXCETO 0-2',loseCondition:'Placar final é exatamente 0-2',wins:['0-0','1-0','1-1','1-2','0-1'],loses:['0-2'],ideal:'Mandante com bom Over 0.5 e visitante que falha em marcar'},
+  9:{icon:'⚠',title:'M9 — Lay Zebra (Apostar contra o azarão)',shortMarket:'APOSTAR CONTRA a vitória do azarão (lay no underdog)',winCondition:'Empate OU vitória do favorito',loseCondition:'Azarão vence a partida',wins:['1-1','0-0','2-1','1-0','3-1'],loses:['0-1','0-2','1-2'],ideal:'Força ≥1.5, azarão com win% <30% e g/j <1.0, favorito em alta'},
+  10:{icon:'⚡',title:'M10 — Momentum & Eficiência (Vitória)',shortMarket:'APOSTAR: Vitória do favorito com momentum alto',winCondition:'O time favorito vence a partida no tempo regular',loseCondition:'Empate ou vitória do adversário',wins:['1-0','2-0','2-1','3-1','3-0'],loses:['0-0','1-1','0-1','0-2','1-2'],ideal:'Favorito dominante/ofensivo, momentum ≥70%, ataque vs xG ≥1.0'},
+  11:{icon:'⚡⚽',title:'M10b — Momentum & Eficiência (Gols)',shortMarket:'APOSTAR: Over 2.5 + BTTS Sim com filtros rigorosos',winCondition:'Ambos times marcam E placar final tem 3+ gols',loseCondition:'Algum time fica em branco OU ≤2 gols totais',wins:['2-1','1-2','2-2','3-1','1-3'],loses:['0-0','2-0','1-0','0-2','1-1'],ideal:'Ambos times com momentum forte, ataque acima do xG e estilo OFENSIVO'}
 };
 
 function rPoi(p,hN,aN){var h='<div class="pg"><div class="pc ph">'+hN.substring(0,3).toUpperCase()+'\\'+aN.substring(0,3).toUpperCase()+'</div>';for(var j=0;j<=4;j++)h+='<div class="pc ph">'+j+'</div>';for(var i=0;i<=4;i++){h+='<div class="pc ph">'+i+'</div>';for(var j2=0;j2<=4;j2++){var v=p.matrix[i][j2]*100;h+='<div class="pc '+(v>=12?'hot':v>=8?'warm':v>=5?'cool':'')+'">'+v.toFixed(1)+'%</div>';}}h+='</div><div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:7px">';var cols=['var(--red)','var(--orange)','var(--green)','var(--accent)','var(--cyan)'];for(var k=0;k<5;k++){var s=p.topScores[k];h+='<div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:6px;padding:4px 10px;text-align:center"><div style="font-size:14px;font-weight:900;color:'+cols[k]+'">'+s.h+'-'+s.a+'</div><div style="font-size:8px;color:var(--text2)">'+(s.p*100).toFixed(1)+'%</div></div>';}return h+'</div>';}
@@ -679,12 +716,51 @@ function showToast(msg,isErr){var t=document.createElement('div');t.className='e
 function getJsPDFClass(){return (window.jspdf&&window.jspdf.jsPDF)||window.jsPDF;}
 function toggleIncludePossible(){var cb=document.getElementById('includePossible');var wrap=document.getElementById('includePossibleWrap');if(cb.checked){wrap.classList.add('active');}else{wrap.classList.remove('active');}}
 
-// Validação automática de odds (v6.7)
+// Validação de odds e mapeamentos
 var MARKET_TO_METHODS = {home:[{id:1,name:'M1 Back Favorito'},{id:10,name:'M10 M&E Vitória'}],away:[{id:9,name:'M9 Lay Zebra (lay)'}],over25:[{id:2,name:'M2 Back 2x2',hv:true},{id:3,name:'M3 Goleada',hv:true},{id:11,name:'M10b M&E Gols',hv:true}],over15:[{id:4,name:'M4 Over 70min'}],cs10:[{id:5,name:'M5 Lay 1x0 (lay)'}],cs01:[{id:6,name:'M6 Lay 0x1 (lay)'}],cs20:[{id:7,name:'M7 Lay 2x0 (lay)'}],cs02:[{id:8,name:'M8 Lay 0x2 (lay)'}]};
 function getMethodById(idx,mid){var r=AR[idx];if(!r)return null;for(var i=0;i<r.a.methods.length;i++){if(r.a.methods[i].id===mid)return r.a.methods[i];}return null;}
 function classifyOddVsRange(odd,m){if(!m||!m.oddMin)return {state:'none',label:''};if(odd<m.oddMin)return {state:'low',label:'↓ Abaixo do Mín ('+m.oddMin.toFixed(2)+')'};if(m.oddMax<99 && odd>m.oddMax)return {state:'high',label:'↑ Acima do Máx ('+m.oddMax.toFixed(2)+')'};if(m.highValue && m.oddIdeal && odd>=m.oddIdeal)return {state:'hv',label:'⭐ HIGH VALUE (sem teto)'};if(m.oddIdeal && Math.abs(odd-m.oddIdeal)<=0.20)return {state:'ideal',label:'✓ Próximo do Ideal ('+m.oddIdeal.toFixed(2)+')'};return {state:'ok',label:'OK (Mín '+m.oddMin.toFixed(2)+' - '+(m.oddMax<99?'Máx '+m.oddMax.toFixed(2):'∞')+')'};}
 function validateOddInput(idx,mkt,odd){var methods=MARKET_TO_METHODS[mkt]||[];if(!methods.length||!odd||odd<=1)return null;var results=[];for(var i=0;i<methods.length;i++){var m=getMethodById(idx,methods[i].id);if(!m)continue;var cls=classifyOddVsRange(odd,m);results.push({mname:methods[i].name,state:cls.state,label:cls.label,m:m});}var priority={hv:5,ideal:4,ok:3,high:2,low:1,none:0};var bestState='none';for(var j=0;j<results.length;j++){if(priority[results[j].state]>priority[bestState])bestState=results[j].state;}return {bestState:bestState,details:results};}
-function renderOddFeedback(validation){if(!validation||!validation.details.length)return '';var h='<div class="odd-feedback">';for(var i=0;i<validation.details.length;i++){var d=validation.details[i];var cls='m-'+d.state;h+='<div class="odd-feedback-msg"><span class="odd-feedback-method '+cls+'">'+d.mname.split(' ')[0]+'</span><span style="color:var(--text2)">'+d.label+'</span></div>';}h+='</div>';return h;}
+function renderOddFeedback(validation){if(!validation||!validation.details.length)return '';var h='<div class="odd-feedback">';for(var i=0;i<validation.details.length;i++){var d=validation.details[i];var cls='m-'+d.state;h+='<div class="odd-feedback-msg"><span class="odd-feedback-method '+cls+'">'+d.mname.split(' ')[0]+'</span><span style="color:#cbd5e1">'+d.label+'</span></div>';}h+='</div>';return h;}
+
+// ═══════════════════════════════════════════════════════
+// 🆕 v7.0: APPLY ODD BOOST — Odds influenciam o score!
+// ═══════════════════════════════════════════════════════
+/* Reverse map: para cada método, qual chave de odds usar */
+var METHOD_TO_ODD_KEY = {1:'home',2:'over25',3:'over25',4:'over15',5:'cs10',6:'cs01',7:'cs20',8:'cs02',9:'away',10:'home',11:'over25'};
+/* Tabela de boost/penalty por estado */
+var BOOST_TABLE = {
+  'hv':      {value: 20, label: 'High Value'},
+  'ideal':   {value: 12, label: 'Odd Ideal'},
+  'ok':      {value: 0,  label: 'Faixa OK'},
+  'high':    {value: -8, label: 'Odd ALTA demais'},
+  'low':     {value: -18,label: 'Odd BAIXA - sem valor'},
+  'none':    {value: 0,  label: ''}
+};
+
+function applyOddBoost(idx){
+  /* Recalcula oddBoost para todos os 11 métodos baseado nas odds inseridas */
+  var r=AR[idx];if(!r)return {applied:0,strong:0,negative:0};
+  var odds=ODDS_STORE[idx]||{};
+  var counts={applied:0,strong:0,negative:0};
+  for(var i=0;i<r.a.methods.length;i++){
+    var m=r.a.methods[i];
+    var key=METHOD_TO_ODD_KEY[m.id];
+    var odd=odds[key];
+    /* Reset */
+    m.oddBoost=0; m.oddBoostLabel='';
+    if(!odd||odd<=1||!m.oddMin)continue;
+    var cls=classifyOddVsRange(odd,m);
+    var boost=BOOST_TABLE[cls.state]||BOOST_TABLE.none;
+    if(boost.value===0)continue;
+    m.oddBoost=boost.value;
+    m.oddBoostLabel='odd '+odd.toFixed(2)+' • '+boost.label;
+    counts.applied++;
+    if(boost.value>=15)counts.strong++;
+    if(boost.value<0)counts.negative++;
+  }
+  return counts;
+}
 
 function exportPDF(){
   if(!AR.length){showToast('Nenhuma análise',true);return;}
@@ -700,7 +776,7 @@ function exportPDF(){
     function setColor(arr){doc.setTextColor(arr[0],arr[1],arr[2]);}
     if(!COMPANY_LOGO){try{var s=localStorage.getItem('company_logo');if(s)COMPANY_LOGO=s;}catch(_){}}
     var matchPages={},indexPage=1;
-    function addHeader(){doc.setFillColor(15,23,42);doc.rect(0,0,pageW,22,'F');if(COMPANY_LOGO){try{var fmt=COMPANY_LOGO.indexOf('image/png')>=0?'PNG':(COMPANY_LOGO.indexOf('image/jpeg')>=0||COMPANY_LOGO.indexOf('image/jpg')>=0?'JPEG':'PNG');doc.addImage(COMPANY_LOGO,fmt,mx,3,16,16);doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');doc.text('Analisador Operacional',mx+20,11);doc.setFontSize(8);doc.setFont('helvetica','normal');doc.text(includePossible?'Confirmadas + Possíveis':'Entradas Confirmadas',mx+20,16);}catch(err){doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');doc.text('Analisador Operacional',mx,11);doc.setFontSize(8);doc.setFont('helvetica','normal');doc.text(includePossible?'Confirmadas + Possíveis':'Entradas Confirmadas',mx,17);}}else{doc.setFillColor(59,130,246);doc.circle(mx+8,11,7,'F');doc.setFillColor(139,92,246);doc.circle(mx+8,11,4,'F');doc.setTextColor(255,255,255);doc.setFontSize(7);doc.setFont('helvetica','bold');doc.text('AO',mx+8,12,{align:'center'});doc.setFontSize(13);doc.text('Analisador Operacional',mx+20,11);doc.setFontSize(8);doc.setFont('helvetica','normal');doc.text(includePossible?'Confirmadas + Possíveis':'Entradas Confirmadas',mx+20,17);}doc.setTextColor(200,200,200);doc.setFontSize(8);doc.setFont('helvetica','normal');var ts=new Date().toLocaleString('pt-BR');doc.text(ts,pageW-mx,11,{align:'right'});doc.text('v6.8',pageW-mx,17,{align:'right'});y=28;}
+    function addHeader(){doc.setFillColor(15,23,42);doc.rect(0,0,pageW,22,'F');if(COMPANY_LOGO){try{var fmt=COMPANY_LOGO.indexOf('image/png')>=0?'PNG':(COMPANY_LOGO.indexOf('image/jpeg')>=0||COMPANY_LOGO.indexOf('image/jpg')>=0?'JPEG':'PNG');doc.addImage(COMPANY_LOGO,fmt,mx,3,16,16);doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');doc.text('Analisador Operacional',mx+20,11);doc.setFontSize(8);doc.setFont('helvetica','normal');doc.text(includePossible?'Confirmadas + Possíveis':'Entradas Confirmadas',mx+20,16);}catch(err){doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');doc.text('Analisador Operacional',mx,11);doc.setFontSize(8);doc.setFont('helvetica','normal');doc.text(includePossible?'Confirmadas + Possíveis':'Entradas Confirmadas',mx,17);}}else{doc.setFillColor(59,130,246);doc.circle(mx+8,11,7,'F');doc.setFillColor(139,92,246);doc.circle(mx+8,11,4,'F');doc.setTextColor(255,255,255);doc.setFontSize(7);doc.setFont('helvetica','bold');doc.text('AO',mx+8,12,{align:'center'});doc.setFontSize(13);doc.text('Analisador Operacional',mx+20,11);doc.setFontSize(8);doc.setFont('helvetica','normal');doc.text(includePossible?'Confirmadas + Possíveis':'Entradas Confirmadas',mx+20,17);}doc.setTextColor(200,200,200);doc.setFontSize(8);doc.setFont('helvetica','normal');var ts=new Date().toLocaleString('pt-BR');doc.text(ts,pageW-mx,11,{align:'right'});doc.text('v7.0',pageW-mx,17,{align:'right'});y=28;}
     function ensureRoom(needed){if(y+needed>pageH-12){doc.addPage();addHeader();}}
     function footer(){var pages=doc.internal.getNumberOfPages();for(var p=1;p<=pages;p++){doc.setPage(p);doc.setFontSize(8);doc.setTextColor(150,150,150);doc.text('Página '+p+' de '+pages,pageW-mx,pageH-6,{align:'right'});doc.text('Análise pré-jogo • Apostas envolvem risco. Use com responsabilidade.',mx,pageH-6);}}
     addHeader();
@@ -731,7 +807,7 @@ function exportPDF(){
     y+=8;
     for(var i=0;i<matches.length;i++){
       var entry=matches[i];var d=AR[entry.idx].d, a=AR[entry.idx].a, p=a.poisson;var ent=entry.entries;
-      ensureRoom(45+ent.length*28);
+      ensureRoom(45+ent.length*30);
       matchPages[entry.idx]=doc.internal.getNumberOfPages();
       doc.setFillColor(241,245,249);doc.rect(mx,y-4,pageW-2*mx,12,'F');
       doc.setFontSize(12);doc.setFont('helvetica','bold');setColor(col.dark);
@@ -756,8 +832,9 @@ function exportPDF(){
       doc.text(badge,mx+3,y+3);y+=10;
       for(var k=0;k<ent.length;k++){
         var cm=ent[k],vc=gV(cm).c;
-        var hasLegend=cm.highValue&&METHOD_LEGENDS[cm.id];
-        var cardHeight=cm.highValue?(hasLegend?38:26):22;
+        var hasLegend=METHOD_LEGENDS[cm.id];
+        var cardHeight=hasLegend?(cm.highValue?40:36):24;
+        if(cm.oddBoost&&cm.oddBoost!==0)cardHeight+=4;
         ensureRoom(cardHeight);
         if(cm.highValue){doc.setDrawColor(251,191,36);doc.setFillColor(255,251,235);}
         else if(vc==='confirmed'){doc.setDrawColor(16,185,129);doc.setFillColor(240,253,244);}
@@ -768,23 +845,29 @@ function exportPDF(){
         doc.text(idLabel+' • '+cm.name,mx+3,y+5);
         var bColor=vc==='confirmed'?col.green:col.orange;
         var bText=vc==='confirmed'?'CONFIRMADA':'POSSÍVEL';
-        setColor(bColor);doc.setFontSize(8);doc.text(bText+' '+cm.score.toFixed(0)+'%',pageW-mx-3,y+5,{align:'right'});
+        setColor(bColor);doc.setFontSize(8);
+        var scoreText=bText+' '+cm.score.toFixed(0)+'%';
+        if(cm.oddBoost&&cm.oddBoost!==0){var es=cm.score+cm.oddBoost;scoreText+=' ('+(cm.oddBoost>0?'+':'')+cm.oddBoost.toFixed(0)+' odd → '+es.toFixed(0)+'%)';}
+        doc.text(scoreText,pageW-mx-3,y+5,{align:'right'});
         if(cm.highValue){setColor(col.gold);doc.setFontSize(7);doc.setFont('helvetica','bold');doc.text('★ ODD ALTA = MAIS VALOR',mx+3,y+10);}
         var yMercado=cm.highValue?14:11;
         doc.setFontSize(11);doc.setFont('helvetica','bold');setColor(col.accent);
         doc.text('Mercado: '+cm.market,mx+3,y+yMercado);
-        /* NOVO v6.8: linhas com legenda explicativa quando highValue */
         if(hasLegend){
           var leg=METHOD_LEGENDS[cm.id];
-          setColor(col.gold);doc.setFontSize(8);doc.setFont('helvetica','bold');
-          doc.text('▶ '+leg.shortMarket,mx+3,y+19);
+          setColor(cm.highValue?col.gold:col.cyan);doc.setFontSize(8);doc.setFont('helvetica','bold');
+          doc.text('▶ '+leg.shortMarket,mx+3,y+(cm.highValue?19:16));
           doc.setFontSize(7);doc.setFont('helvetica','normal');setColor(col.green);
-          doc.text('✓ GANHA: '+leg.winCondition,mx+3,y+24);
+          doc.text('✓ GANHA: '+leg.winCondition,mx+3,y+(cm.highValue?24:21));
           setColor(col.red);
-          doc.text('✗ PERDE: '+leg.loseCondition,mx+3,y+28);
-          setColor(col.dark);doc.setFontSize(7);
+          doc.text('✗ PERDE: '+leg.loseCondition,mx+3,y+(cm.highValue?28:25));
+          if(cm.oddBoost&&cm.oddBoost!==0){
+            setColor(cm.oddBoost>0?col.green:col.red);doc.setFontSize(7);doc.setFont('helvetica','bold');
+            doc.text((cm.oddBoost>0?'↑':'↓')+' '+cm.oddBoostLabel,mx+3,y+(cm.highValue?32:29));
+          }
+          setColor(col.dark);doc.setFontSize(7);doc.setFont('helvetica','normal');
           var oddInfo='';if(cm.oddMin&&cm.oddMax){var maxLbl=cm.oddMax>=99?'∞':cm.oddMax.toFixed(2);oddInfo='Faixa: '+cm.oddMin.toFixed(2)+'-'+maxLbl+' | ';}
-          doc.text(oddInfo+'Risco: '+cm.risk+' | Stake: '+cm.stake+'% | Saída: '+cm.exit,mx+3,y+33);
+          doc.text(oddInfo+'Risco: '+cm.risk+' | Stake: '+cm.stake+'% | Saída: '+cm.exit,mx+3,y+(cm.highValue?(cm.oddBoost?36:33):(cm.oddBoost?33:30)));
         }else{
           var yDet=cm.highValue?20:16;
           doc.setFontSize(8);doc.setFont('helvetica','normal');setColor(col.dark);
@@ -805,9 +888,7 @@ function exportPDF(){
     showToast(msg);
   }catch(err){console.error('Erro PDF:',err);showToast('Erro: '+err.message,true);}
 }
-
-function exportCSV(){if(!AR.length){showToast('Nada para exportar',true);return;}var includePossible=document.getElementById('includePossible')&&document.getElementById('includePossible').checked;var lines=['Partida,Data,Hora,Formacao_Casa,Formacao_Fora,Metodo,Tipo,Mercado,Apostar_em,Score,Veredicto,Risco,Stake,Odd_Min,Odd_Max,HighValue'];var count=0;for(var i=0;i<AR.length;i++){var d=AR[i].d, a=AR[i].a;var match=d.homeTeam+' x '+d.awayTeam;for(var j=0;j<a.methods.length;j++){var m=a.methods[j], v=gV(m);if(v.c!=='confirmed'&&!(includePossible&&v.c==='possible'))continue;count++;var mLabel=m.id===11?'M10b '+m.name:'M'+m.id+' '+m.name;var apostarEm=METHOD_LEGENDS[m.id]?METHOD_LEGENDS[m.id].shortMarket:m.market;var oddMin=m.oddMin?m.oddMin.toFixed(2):'';var oddMax=m.oddMax?(m.oddMax>=99?'inf':m.oddMax.toFixed(2)):'';lines.push(['"'+match+'"',d.date,d.time||'',d.homeFormation||'',d.awayFormation||'','"'+mLabel+'"',m.type.toUpperCase(),'"'+m.market+'"','"'+apostarEm+'"',m.score.toFixed(1),v.t,m.risk,m.stake+'%',oddMin,oddMax,m.highValue?'SIM':'NAO'].join(','));}}if(!count){showToast('Nenhuma entrada',true);return;}var csv=lines.join('\n');var blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download=(includePossible?'Confirmadas_Possiveis_':'Confirmadas_')+(new Date().toISOString().slice(0,10))+'.csv';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);showToast('CSV: '+count+' entrada(s)');}
-
+function exportCSV(){if(!AR.length){showToast('Nada para exportar',true);return;}var includePossible=document.getElementById('includePossible')&&document.getElementById('includePossible').checked;var lines=['Partida,Data,Hora,Formacao_Casa,Formacao_Fora,Metodo,Tipo,Mercado,Apostar_em,Score,Odd_Boost,Score_Efetivo,Veredicto,Risco,Stake,Odd_Min,Odd_Max,HighValue'];var count=0;for(var i=0;i<AR.length;i++){var d=AR[i].d, a=AR[i].a;var match=d.homeTeam+' x '+d.awayTeam;for(var j=0;j<a.methods.length;j++){var m=a.methods[j], v=gV(m);if(v.c!=='confirmed'&&!(includePossible&&v.c==='possible'))continue;count++;var mLabel=m.id===11?'M10b '+m.name:'M'+m.id+' '+m.name;var apostarEm=METHOD_LEGENDS[m.id]?METHOD_LEGENDS[m.id].shortMarket:m.market;var oddMin=m.oddMin?m.oddMin.toFixed(2):'';var oddMax=m.oddMax?(m.oddMax>=99?'inf':m.oddMax.toFixed(2)):'';var oddBoost=(m.oddBoost||0).toFixed(0);var efetivo=(m.score+(m.oddBoost||0)).toFixed(1);lines.push(['"'+match+'"',d.date,d.time||'',d.homeFormation||'',d.awayFormation||'','"'+mLabel+'"',m.type.toUpperCase(),'"'+m.market+'"','"'+apostarEm+'"',m.score.toFixed(1),oddBoost,efetivo,v.t,m.risk,m.stake+'%',oddMin,oddMax,m.highValue?'SIM':'NAO'].join(','));}}if(!count){showToast('Nenhuma entrada',true);return;}var csv=lines.join('\n');var blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download=(includePossible?'Confirmadas_Possiveis_':'Confirmadas_')+(new Date().toISOString().slice(0,10))+'.csv';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);showToast('CSV: '+count+' entrada(s)');}
 var ACTIVE_FORMATION='all';
 function getAllFormations(){var set={};for(var i=0;i<AR.length;i++){var d=AR[i].d;if(d.homeFormation)set[d.homeFormation]=true;if(d.awayFormation)set[d.awayFormation]=true;}return Object.keys(set).sort();}
 function applyFormationFilter(form,btn){ACTIVE_FORMATION=form;var btns=document.querySelectorAll('.fbtn-form');for(var i=0;i<btns.length;i++)btns[i].classList.remove('active');if(btn)btn.classList.add('active');var blocks=document.querySelectorAll('.mb');for(var j=0;j<blocks.length;j++){var idx=parseInt(blocks[j].getAttribute('data-idx'));if(isNaN(idx)){blocks[j].style.display='';continue;}var d=AR[idx]&&AR[idx].d;if(!d){blocks[j].style.display='';continue;}if(form==='all'){blocks[j].style.display='';}else{var match=d.homeFormation===form||d.awayFormation===form;blocks[j].style.display=match?'':'none';}}}
@@ -815,18 +896,56 @@ function rebuildFormationFilters(){var c=document.getElementById('formationFilte
 
 var ODDS_STORE={};
 var ODDS_MARKETS=[{key:'home',label:'Casa (1)',group:'1X2'},{key:'draw',label:'Empate (X)',group:'1X2'},{key:'away',label:'Fora (2)',group:'1X2'},{key:'over25',label:'Over 2.5',group:'Gols'},{key:'under25',label:'Under 2.5',group:'Gols'},{key:'over15',label:'Over 1.5',group:'Gols'},{key:'bttsYes',label:'BTTS Sim',group:'BTTS'},{key:'bttsNo',label:'BTTS Nao',group:'BTTS'},{key:'cs10',label:'CS 1-0',group:'Placar'},{key:'cs01',label:'CS 0-1',group:'Placar'},{key:'cs20',label:'CS 2-0',group:'Placar'},{key:'cs02',label:'CS 0-2',group:'Placar'}];
-function renderOddsPanel(idx){var saved=ODDS_STORE[idx]||{};var h='<div class="odds-panel"><div class="odds-title"><span>Odds do Mercado <span style="color:var(--text3);font-weight:600;font-size:10px;text-transform:none;letter-spacing:0">(opcional - validação automática)</span></span><div style="display:flex;gap:6px"><button class="odds-btn-apply" onclick="applyOdds('+idx+')">Aplicar Valor</button><button class="odds-btn-clear" onclick="clearOdds('+idx+')">Limpar</button></div></div><div class="odds-grid">';for(var i=0;i<ODDS_MARKETS.length;i++){var m=ODDS_MARKETS[i],val=saved[m.key]||'';var vState='',vCls='',feedback='';if(val){var validation=validateOddInput(idx,m.key,parseFloat(val));if(validation){vState=validation.bestState;vCls=' v-'+vState;feedback=renderOddFeedback(validation);}}var clsHasValue=val?'has-value':'';h+='<div class="odds-input-wrap '+clsHasValue+vCls+'" id="odds-wrap-'+idx+'-'+m.key+'"><label>'+m.label+'</label><input type="number" step="0.01" min="1.01" max="999" placeholder="-.--" value="'+val+'" data-mkt="'+m.key+'" data-idx="'+idx+'" oninput="onOddChange(event)">'+feedback+'</div>';}return h+'</div></div>';}
+
+function renderOddsPanel(idx){var saved=ODDS_STORE[idx]||{};var h='<div class="odds-panel"><div class="odds-title"><span>💰 Odds do Mercado <span style="color:#94a3b8;font-weight:600;font-size:10px;text-transform:none;letter-spacing:0">(opcional - aplicar influencia score!)</span></span><div style="display:flex;gap:6px"><button class="odds-btn-apply" onclick="applyOdds('+idx+')">🚀 Aplicar Valor</button><button class="odds-btn-clear" onclick="clearOdds('+idx+')">Limpar</button></div></div><div class="odds-grid">';for(var i=0;i<ODDS_MARKETS.length;i++){var m=ODDS_MARKETS[i],val=saved[m.key]||'';var vState='',vCls='',feedback='';if(val){var validation=validateOddInput(idx,m.key,parseFloat(val));if(validation){vState=validation.bestState;vCls=' v-'+vState;feedback=renderOddFeedback(validation);}}var clsHasValue=val?'has-value':'';h+='<div class="odds-input-wrap '+clsHasValue+vCls+'" id="odds-wrap-'+idx+'-'+m.key+'"><label>'+m.label+'</label><input type="number" step="0.01" min="1.01" max="999" placeholder="-.--" value="'+val+'" data-mkt="'+m.key+'" data-idx="'+idx+'" oninput="onOddChange(event)">'+feedback+'</div>';}h+='</div>';h+='<div class="boost-toast-info">💡 <strong>Como funciona</strong>: ao clicar em <strong>Aplicar Valor</strong>, as odds inseridas influenciam o score dos métodos:<br>• <strong style="color:var(--lime)">⭐ HIGH VALUE</strong> (+20 pts) • <strong style="color:var(--green)">Odd Ideal</strong> (+12 pts) • <strong style="color:var(--orange)">Acima Máx</strong> (-8 pts) • <strong style="color:var(--red)">Abaixo Mín</strong> (-18 pts)</div>';return h+'</div>';}
 function onOddChange(e){var idx=parseInt(e.target.getAttribute('data-idx')),mkt=e.target.getAttribute('data-mkt'),val=parseFloat(e.target.value);if(!ODDS_STORE[idx])ODDS_STORE[idx]={};var wrap=e.target.parentElement;wrap.classList.remove('v-low','v-high','v-ok','v-ideal','v-hv');var oldFb=wrap.querySelector('.odd-feedback');if(oldFb)oldFb.remove();if(val&&val>1){ODDS_STORE[idx][mkt]=val;wrap.classList.add('has-value');var validation=validateOddInput(idx,mkt,val);if(validation&&validation.bestState!=='none'){wrap.classList.add('v-'+validation.bestState);var fb=document.createElement('div');fb.innerHTML=renderOddFeedback(validation);var fbDiv=fb.firstChild;if(fbDiv)wrap.appendChild(fbDiv);}}else{delete ODDS_STORE[idx][mkt];wrap.classList.remove('has-value');}}
-function clearOdds(idx){ODDS_STORE[idx]={};var c=document.getElementById('odds-section-'+idx);if(c)c.innerHTML=renderOddsPanel(idx)+'<div id="odds-results-'+idx+'"></div>';}
-function applyOdds(idx){var odds=ODDS_STORE[idx]||{},r=AR[idx];if(!r)return;var va=calculateValue(r.d,r.a,odds);r.valueAnalysis=va;var rd=document.getElementById('odds-results-'+idx);if(rd)rd.innerHTML=renderValueResults(idx,r.d,r.a,va);updateMethodCardsWithEdge(idx,va);}
+function clearOdds(idx){
+  ODDS_STORE[idx]={};
+  /* Reset oddBoost de todos os métodos */
+  var r=AR[idx];if(r){for(var i=0;i<r.a.methods.length;i++){r.a.methods[i].oddBoost=0;r.a.methods[i].oddBoostLabel='';}}
+  var c=document.getElementById('odds-section-'+idx);
+  if(c)c.innerHTML=renderOddsPanel(idx)+'<div id="odds-results-'+idx+'"></div>';
+  /* Re-render cards do método */
+  var bd=document.getElementById('bd'+idx);
+  if(bd){var newHTML=rMatch(AR[idx],idx);var temp=document.createElement('div');temp.innerHTML=newHTML;var newBd=temp.querySelector('#bd'+idx);if(newBd){bd.innerHTML=newBd.innerHTML;bd.classList.add('open');}}
+  showToast('Odds e boosts removidos');
+}
+function applyOdds(idx){
+  var odds=ODDS_STORE[idx]||{},r=AR[idx];if(!r)return;
+  /* v7.0: aplicar boost de odds no score dos métodos */
+  var boostCounts=applyOddBoost(idx);
+  /* Cálculo de valor (edge/EV) */
+  var va=calculateValue(r.d,r.a,odds);r.valueAnalysis=va;
+  /* Re-render dos cards de métodos (para mostrar oddBoost e novo score) */
+  var bd=document.getElementById('bd'+idx);
+  if(bd){
+    var openBefore=bd.classList.contains('open');
+    var newHTML=rMatch(AR[idx],idx);
+    var temp=document.createElement('div');temp.innerHTML=newHTML;
+    var newBd=temp.querySelector('#bd'+idx);
+    if(newBd){
+      bd.innerHTML=newBd.innerHTML;
+      if(openBefore)bd.classList.add('open');
+    }
+  }
+  /* Atualiza painel de valor */
+  var rd=document.getElementById('odds-results-'+idx);
+  if(rd)rd.innerHTML=renderValueResults(idx,r.d,r.a,va);
+  updateMethodCardsWithEdge(idx,va);
+  /* Toast com resumo */
+  var msg='Odds aplicadas: ';
+  if(boostCounts.applied===0)msg+='nenhum método afetado';
+  else{msg+=boostCounts.applied+' método(s) ajustado(s)';if(boostCounts.strong>0)msg+=' • '+boostCounts.strong+' boost forte';if(boostCounts.negative>0)msg+=' • '+boostCounts.negative+' penalizado(s)';}
+  showToast(msg);
+}
 function impliedProb(o){return o>0?1/o:0;}
 function edgePct(p,o){return (p*o-1)*100;}
 function kellyFraction(p,o){var b=o-1,q=1-p,f=(b*p-q)/b;return f>0?f:0;}
 function classifyEdge(ev){if(ev>=10)return{cls:'edge-strong',label:'+EV FORTE'};if(ev>=3)return{cls:'edge-pos',label:'+EV'};if(ev>=-2)return{cls:'edge-neutral',label:'NEUTRO'};return{cls:'edge-neg',label:'-EV'};}
 function calculateValue(d,a,odds){var p=a.poisson,rows=[];var trueProb={home:p.pHome,draw:p.pDraw,away:p.pAway,over25:0,under25:0,over15:0,bttsYes:0,bttsNo:0,cs10:p.matrix[1][0],cs01:p.matrix[0][1],cs20:p.matrix[2][0],cs02:p.matrix[0][2]};var o25=0,o15=0,bts=0;for(var i=0;i<=5;i++)for(var j=0;j<=5;j++){var pp=p.matrix[i][j];if(i+j>=3)o25+=pp;if(i+j>=2)o15+=pp;if(i>0&&j>0)bts+=pp;}trueProb.over25=o25;trueProb.under25=1-o25;trueProb.over15=o15;trueProb.bttsYes=bts;trueProb.bttsNo=1-bts;var sO=((d.homeOverTotal.o25+d.awayOverTotal.o25)/2)/100,sB=((d.home.btts+d.away.btts)/2)/100;if(sO>0)trueProb.over25=(trueProb.over25+sO)/2;if(sB>0)trueProb.bttsYes=(trueProb.bttsYes+sB)/2;trueProb.under25=1-trueProb.over25;trueProb.bttsNo=1-trueProb.bttsYes;for(var k=0;k<ODDS_MARKETS.length;k++){var m=ODDS_MARKETS[k],odd=odds[m.key];if(!odd||odd<=1)continue;var tp=trueProb[m.key]||0,ip=impliedProb(odd),ev=edgePct(tp,odd),kf=kellyFraction(tp,odd);rows.push({mkt:m.label,group:m.group,key:m.key,odd:odd,impliedProb:ip*100,trueProb:tp*100,edge:ev,kelly:kf*100,kellyHalf:kf*50,verdict:classifyEdge(ev)});}rows.sort(function(a,b){return b.edge-a.edge;});var bv=rows.length>0&&rows[0].edge>=3?rows[0]:null;var me={},mm={1:d.home.ppg>=d.away.ppg?'home':'away',2:'over25',3:'over25',4:'over15',5:'cs10',6:'cs01',7:'cs20',8:'cs02',9:d.home.ppg>=d.away.ppg?'away':'home',10:d.home.ppg>=d.away.ppg?'home':'away',11:'over25'};for(var mid in mm){var mk=mm[mid],od=odds[mk];if(od&&trueProb[mk]){me[mid]={market:mk,odd:od,edge:edgePct(trueProb[mk],od),trueProb:trueProb[mk]*100};}}return{rows:rows,bestValue:bv,methodEdges:me,trueProb:trueProb};}
-function renderValueResults(idx,d,a,va){if(!va.rows.length)return '<div class="no-odds"><strong>Nenhuma odd preenchida</strong>Insira odds acima e clique em Aplicar.</div>';var h='';if(va.bestValue){var bv=va.bestValue;h+='<div class="best-value"><div class="best-value-title">Melhor Oportunidade de Valor</div><div class="best-value-content"><div><div class="best-value-mkt">'+bv.mkt+' <span style="font-size:10px;color:var(--text3)">('+bv.group+')</span></div><div style="font-size:10px;color:var(--text2);margin-top:3px">Prob real: '+bv.trueProb.toFixed(1)+'% | Implícita: '+bv.impliedProb.toFixed(1)+'%</div></div><div style="text-align:right"><div class="best-value-odd">@ '+bv.odd.toFixed(2)+'</div><div class="best-value-edge">+'+bv.edge.toFixed(1)+'% EV</div><div style="font-size:10px;color:var(--cyan);margin-top:2px">Kelly 1/2: '+bv.kellyHalf.toFixed(1)+'%</div></div></div></div>';}h+='<table class="value-table"><thead><tr><th>Mercado</th><th>Odd</th><th>Implícita</th><th>Real</th><th>Edge</th><th>Kelly</th><th>Veredito</th></tr></thead><tbody>';for(var i=0;i<va.rows.length;i++){var r=va.rows[i],ec=r.edge>=3?'pos-edge':(r.edge<-2?'neg-edge':'');h+='<tr><td class="mkt">'+r.mkt+'<div style="font-size:8px;color:var(--text3);font-weight:600">'+r.group+'</div></td><td>'+r.odd.toFixed(2)+'</td><td>'+r.impliedProb.toFixed(1)+'%</td><td>'+r.trueProb.toFixed(1)+'%</td><td class="'+ec+'">'+(r.edge>=0?'+':'')+r.edge.toFixed(1)+'%</td><td class="kelly">'+r.kellyHalf.toFixed(1)+'%</td><td><span class="edge-badge '+r.verdict.cls+'">'+r.verdict.label+'</span></td></tr>';}h+='</tbody></table>';var pc=va.rows.filter(function(r){return r.edge>=3;}).length,sc=va.rows.filter(function(r){return r.edge>=10;}).length;h+='<div class="odds-summary"><div class="odds-summary-item">Analisados: <strong>'+va.rows.length+'</strong></div><div class="odds-summary-item">+EV: <strong style="color:var(--green)">'+pc+'</strong></div><div class="odds-summary-item">+EV Forte: <strong style="color:var(--lime)">'+sc+'</strong></div></div>';return h;}
+function renderValueResults(idx,d,a,va){if(!va.rows.length)return '<div class="no-odds"><strong>Nenhuma odd preenchida</strong>Insira odds acima e clique em Aplicar.</div>';var h='';if(va.bestValue){var bv=va.bestValue;h+='<div class="best-value"><div class="best-value-title">Melhor Oportunidade de Valor</div><div class="best-value-content"><div><div class="best-value-mkt">'+bv.mkt+' <span style="font-size:10px;color:#94a3b8">('+bv.group+')</span></div><div style="font-size:10px;color:#cbd5e1;margin-top:3px">Prob real: '+bv.trueProb.toFixed(1)+'% | Implícita: '+bv.impliedProb.toFixed(1)+'%</div></div><div style="text-align:right"><div class="best-value-odd">@ '+bv.odd.toFixed(2)+'</div><div class="best-value-edge">+'+bv.edge.toFixed(1)+'% EV</div><div style="font-size:10px;color:var(--cyan);margin-top:2px">Kelly 1/2: '+bv.kellyHalf.toFixed(1)+'%</div></div></div></div>';}h+='<table class="value-table"><thead><tr><th>Mercado</th><th>Odd</th><th>Implícita</th><th>Real</th><th>Edge</th><th>Kelly</th><th>Veredito</th></tr></thead><tbody>';for(var i=0;i<va.rows.length;i++){var r=va.rows[i],ec=r.edge>=3?'pos-edge':(r.edge<-2?'neg-edge':'');h+='<tr><td class="mkt">'+r.mkt+'<div style="font-size:8px;color:#94a3b8;font-weight:600">'+r.group+'</div></td><td>'+r.odd.toFixed(2)+'</td><td>'+r.impliedProb.toFixed(1)+'%</td><td>'+r.trueProb.toFixed(1)+'%</td><td class="'+ec+'">'+(r.edge>=0?'+':'')+r.edge.toFixed(1)+'%</td><td class="kelly">'+r.kellyHalf.toFixed(1)+'%</td><td><span class="edge-badge '+r.verdict.cls+'">'+r.verdict.label+'</span></td></tr>';}h+='</tbody></table>';var pc=va.rows.filter(function(r){return r.edge>=3;}).length,sc=va.rows.filter(function(r){return r.edge>=10;}).length;h+='<div class="odds-summary"><div class="odds-summary-item">Analisados: <strong>'+va.rows.length+'</strong></div><div class="odds-summary-item">+EV: <strong style="color:var(--green)">'+pc+'</strong></div><div class="odds-summary-item">+EV Forte: <strong style="color:var(--lime)">'+sc+'</strong></div></div>';return h;}
 function updateMethodCardsWithEdge(idx,va){for(var mid in va.methodEdges){var info=va.methodEdges[mid],card=document.querySelector('#bd'+idx+' .mc[data-mid="'+mid+'"]');if(!card)continue;var ex=card.querySelector('.mc-edge-corner');if(ex)ex.remove();var v=classifyEdge(info.edge),b=document.createElement('span');b.className='edge-badge mc-edge-corner '+v.cls;b.setAttribute('data-tip','Edge vs odd '+info.odd.toFixed(2)+' | Prob: '+info.trueProb.toFixed(1)+'%');b.innerHTML=(info.edge>=0?'+':'')+info.edge.toFixed(1)+'%';card.classList.add('mc-with-odds');card.appendChild(b);}}
 
-async function run(){if(!UF.length)return;pbtn.disabled=true;var bar=document.getElementById('bar'),fill=document.getElementById('fill');bar.style.display='block';for(var i=0;i<UF.length;i++){uCS(i,'processing');fill.style.width=((i/UF.length)*100)+'%';try{var text=await exT(UF[i]);console.log('PDF lido:',UF[i].name,'| chars:',text.length);var data=parse(text);var analysis=analyzeMatch(data);AR.push({d:data,a:analysis});uCS(i,'done');}catch(e){console.error('Erro:',UF[i].name,e);uCS(i,'error');}}fill.style.width='100%';if(AR.length){document.getElementById('rS').style.display='block';document.getElementById('gS').innerHTML=rSum(AR);document.getElementById('fB').style.display='flex';document.getElementById('exportBar').style.display='flex';rebuildFormationFilters();if(COMPANY_LOGO){document.getElementById('logoPreview').src=COMPANY_LOGO;document.getElementById('logoPreview').style.display='inline-block';document.getElementById('logoRemove').style.display='inline-block';document.getElementById('logoBtnLabel').textContent='Trocar Logo';}var mh='';for(var j=0;j<AR.length;j++)mh+=rMatch(AR[j],j);document.getElementById('mR').innerHTML=mh;if(AR.length===1)tM(0);document.getElementById('rS').scrollIntoView({behavior:'smooth'});}setTimeout(function(){bar.style.display='none';pbtn.disabled=false;},1500);}
+async function run(){if(!UF.length)return;pbtn.disabled=true;var bar=document.getElementById('bar'),fill=document.getElementById('fill');bar.style.display='block';for(var i=0;i<UF.length;i++){uCS(i,'processing');fill.style.width=((i/UF.length)*100)+'%';try{var text=await exT(UF[i]);console.log('PDF lido:',UF[i].name,'| chars:',text.length);var data=parse(text);var analysis=analyzeMatch(data);AR.push({d:data,a:analysis});uCS(i,'done');}catch(e){console.error('Erro:',UF[i].name,e);uCS(i,'error');}}fill.style.width='100%';if(AR.length){document.getElementById('rS').style.display='block';document.getElementById('gS').innerHTML=rSum(AR);document.getElementById('fB').style.display='flex';document.getElementById('exportBar').style.display='flex';rebuildFormationFilters();if(COMPANY_LOGO){document.getElementById('logoPreview').src=COMPANY_LOGO;document.getElementById('logoPreview').style.display='inline-block';document.getElementById('logoRemove').style.display='inline-block';document.getElementById('logoBtnLabel').textContent='Trocar Logo';}if(BEGINNER_MODE){document.getElementById('beginnerModeCb').checked=true;document.getElementById('beginnerModeWrap').classList.add('active');}var mh='';for(var j=0;j<AR.length;j++)mh+=rMatch(AR[j],j);document.getElementById('mR').innerHTML=mh;if(AR.length===1)tM(0);document.getElementById('rS').scrollIntoView({behavior:'smooth'});}setTimeout(function(){bar.style.display='none';pbtn.disabled=false;},1500);}
 </script>
 </body></html>
