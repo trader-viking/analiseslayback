@@ -4,7 +4,7 @@ Ferramenta de análise pré-jogo para trading esportivo com **11 métodos de an�
 
 ## 🌐 Acessar Online
 
-👉 **[Abrir Analisador Operacional](https://SEU-USUARIO.github.io/analisador-operacional/)**
+👉 **[Abrir Analisador Operacional](https://trader-viking.github.io/analiseslayback)**
 
 ## ✨ Funcionalidades
 
